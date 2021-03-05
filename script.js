@@ -47,8 +47,5 @@ const strProcessor = (str) => {
     formattedStr += startTime + ': S/O ' + officerName + ' started the ' + patrolType + '; \n' + endTime + ': S/O ' + officerName + ' finished the ' + patrolType + ', all clear; \n'
   })
   
-  
-
-
   return formattedStr;
 }
