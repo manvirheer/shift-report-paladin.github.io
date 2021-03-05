@@ -26,7 +26,7 @@ const removeExtras = (str) => {
 
 const strProcessor = (str) => {
   
-  const arr = str.split(' View Tour Session + ');
+  const arr = str.split(' View Tour Session + ').reverse();
   var formattedStr = '';
   arr.forEach((ele) => {
     ele = ele.replace('+ S - M232 - Colliers - Exchange Building  + ', '');
