@@ -36,15 +36,17 @@ const strProcessor = (str) => {
     ele = ele.replace(/^([\w\/\-]+)/, '');
     ele = ele.replace(/\sPatrol\s/, '');
 
-    const officerName = ele.match(/\w+\s+\w+/)[0];
+    const officerName = ele.match(/\w+\s+/)[0];
+     ele = ele.replace(/\w+\s+/, '')
+    const officerLastName = (ele.match(/\w+/)[0]).toUpperCase();
 
-    ele = ele.replace(/\w+\s+\w+/, '')
+    ele = ele.replace(/\w+/, '')
     
     const startTime = ele.match(/\d+:\d+/)[0];
     const endTime = ele.match(/\d+:\d+/g)[1];
 
     console.log(startTime + ' ' + endTime + '\n')
-    formattedStr += startTime + ': S/O ' + officerName + ' started the ' + patrolType + '. \n' + endTime + ': S/O ' + officerName + ' finished the ' + patrolType + '; all clear. \n'
+    formattedStr += startTime + ': S/O ' + officerName + ' ' + officerLastName + ' started the ' + patrolType + '. \n' + endTime + ': S/O ' + officerName + ' ' + officerLastName  ' finished the ' + patrolType + '; all clear. \n'
   })
   
   return formattedStr;
