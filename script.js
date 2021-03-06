@@ -44,7 +44,7 @@ const strProcessor = (str) => {
     const endTime = ele.match(/\d+:\d+/g)[1];
 
     console.log(startTime + ' ' + endTime + '\n')
-    formattedStr += startTime + ': S/O ' + officerName + ' started the ' + patrolType + '; \n' + endTime + ': S/O ' + officerName + ' finished the ' + patrolType + ', all clear; \n'
+    formattedStr += startTime + ': S/O ' + officerName + ' started the ' + patrolType + '. \n' + endTime + ': S/O ' + officerName + ' finished the ' + patrolType + '; all clear. \n'
   })
   
   return formattedStr;
