@@ -37,7 +37,9 @@ const strProcessor = (str) => {
     ele = ele.replace(/\sPatrol\s/, '');
 
     const officerName = ele.match(/\w+\s+/)[0];
-     ele = ele.replace(/\w+\s+/, '')
+    ele = ele.replace(/\w+\s+/, '')
+    
+    //Last name
     const officerLastName = (ele.match(/\w+/)[0]).toUpperCase();
 
     ele = ele.replace(/\w+/, '')
