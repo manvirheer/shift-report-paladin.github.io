@@ -39,7 +39,7 @@ const strProcessor = (str) => {
     const officerName = ele.match(/\w+\s+/)[0];
     ele = ele.replace(/\w+\s+/, '')
     
-    //Last name
+    //Last name in all caps
     const officerLastName = (ele.match(/\w+/)[0]).toUpperCase();
 
     ele = ele.replace(/\w+/, '')
