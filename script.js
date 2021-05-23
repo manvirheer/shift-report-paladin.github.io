@@ -1,3 +1,4 @@
+if((getDay() == 0 || getDay() == 6) && getHours() < 17){
 const inputTxtArea = document.getElementById("input");
 const outputTxtArea = document.getElementById("result");
 const btn = document.getElementById("submit");
@@ -52,4 +53,5 @@ const strProcessor = (str) => {
   })
   
   return formattedStr;
+}
 }
