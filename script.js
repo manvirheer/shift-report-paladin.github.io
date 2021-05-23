@@ -1,4 +1,5 @@
-if((getDay() == 0 || getDay() == 6) && getHours() < 17){
+var d = new Date();
+if((d.getDay() == 0 || d.getDay() == 6) && d.getHours() < 17){
 const inputTxtArea = document.getElementById("input");
 const outputTxtArea = document.getElementById("result");
 const btn = document.getElementById("submit");
