@@ -61,9 +61,24 @@ if ((d.getDay() == 0 || d.getDay() == 6) && d.getHours() < 17) {
       if (!officersOnDuty.includes(officerName + officerLastName))
         officersOnDuty.push(officerName + officerLastName);
 
+      if (officersOnDuty.length > 1) {
+
+      }
       const endTime = ele.match(/\d+:\d+/g)[1];
 
-      formattedStr += startTime + ': S/O ' + officerName + officerLastName + ' started the ' + patrolType + '. \n' + endTime + ': S/O ' + officerName + officerLastName + ' completed the ' + patrolType + '; all clear. \n'
+      let startTimeInMinutes = (60 * parseInt(String(startTime).match(/^(\d+):(\d+)$/)[1], 10) + parseInt(String(startTime).match(/^(\d+):(\d+)$/)[2], 10))
+
+      let endTimeInMinutes = (60 * parseInt(String(endTime).match(/^(\d+):(\d+)$/)[1], 10) + parseInt(String(endTime).match(/^(\d+):(\d+)$/)[2], 10))
+
+      
+      if (officersOnDuty.length > 1 && (endTimeInMinutes - startTimeInMinutes > 10)) {
+        formattedStr += startTime + ': S/O ' + officerName + officerLastName + ' started the ' + patrolType + '. \n' + startTime.substr(0, startTime.length - 2) + (parseInt(String(startTime).match(/^(\d+):(\d+)$/)[2], 10) + 5) + ' : S/O ' + officersOnDuty[1- officersOnDuty.indexOf(officerName + officerLastName)] + ' is monitoring CCTV cameras, site is safe and secure. \n'
+          + endTime + ': S/O ' + officerName + officerLastName + ' completed the ' + patrolType + '; all clear. \n';
+      }
+      else {
+        formattedStr += startTime + ': S/O ' + officerName + officerLastName + ' started the ' + patrolType + '. \n' + endTime + ': S/O ' + officerName + officerLastName + ' completed the ' + patrolType + '; all clear. \n';
+      }
+
     })
     console.log(officersOnDuty)
 
