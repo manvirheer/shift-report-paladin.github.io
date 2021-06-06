@@ -1,5 +1,5 @@
 var d = new Date();
-if ((d.getDay() == 0 || d.getDay() == 6) && d.getHours() < 17) {
+
   const inputTxtArea = document.getElementById("input");
   const outputTxtArea = document.getElementById("result");
   const btn = document.getElementById("submit");
@@ -87,4 +87,3 @@ if ((d.getDay() == 0 || d.getDay() == 6) && d.getHours() < 17) {
     let initialDuties = "08:10: S/O " + officersOnDuty[0] + ' and ' + officersOnDuty[1] + ' read the pass-on and emails' + '\n';
     return breifing + initialDuties + formattedStr;
   }
-}
